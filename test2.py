@@ -14,7 +14,10 @@ def call(sentance):
     consonents += [None] * (max_len - len(consonents))
     df = pd.DataFrame({'vowels': vowels, 'consonants': consonents})
 
+   
 
+
+   
 
     
     
