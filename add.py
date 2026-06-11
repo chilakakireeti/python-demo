@@ -1,3 +1,3 @@
-from added import adition
+from added import adition,subtraction
 print(adition(5,6))
-print(adition(10,20))
+print(subtraction(10,20))
