@@ -1,0 +1,11 @@
+fastapi
+pydantic
+uvicorn
+email-validator
+pymongo
+pymongo[srv]
+passlib
+bcrypt==4.0.1
+passlib[bcrypt]
+python-jose[cryptography]
+cryptography==45.0.5
