@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maganti IT Registration</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#f5f7ff,#eef2ff);
+}
+
+/* Welcome Section */
+.welcome-section{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.logo{
+    width:220px;
+    margin-bottom:20px;
+}
+
+.logo img{
+    width:100%;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:15px;
+    background:linear-gradient(90deg,#1e88e5,#8e24aa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.welcome-text{
+    font-size:18px;
+    color:#555;
+    margin-bottom:30px;
+}
+
+.start-btn{
+    padding:14px 35px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    color:white;
+    background:linear-gradient(90deg,#1e88e5,#8e24aa);
+    transition:0.3s;
+}
+
+.start-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Form Section */
+.form-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.form-card{
+    width:100%;
+    max-width:450px;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-card h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:6px;
+    color:#555;
+    font-weight:600;
+}
+
+.input-group input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+}
+
+.input-group input:focus{
+    border-color:#6a5acd;
+}
+
+.submit-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    background:linear-gradient(90deg,#1e88e5,#8e24aa);
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+    opacity:0.9;
+}
+
+.success-msg{
+    margin-top:15px;
+    text-align:center;
+    color:green;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<!-- Welcome Section -->
+<section class="welcome-section">
+
+    <div class="logo">
+        <!-- Replace with your logo image path -->
+      <img src="file:///C:/Users/mitvo/OneDrive%20-%20Maganti%20IT%20Solutions%20PVT%20LTD/Desktop/yadharth/app/mit.png" alt="Maganti IT Logo">
+    </div>
+
+    <h1>Welcome to Maganti IT</h1>
+
+    <p class="welcome-text">
+        Empowering your future with technology and innovation.
+    </p>
+
+    <button class="start-btn" onclick="goToForm()">
+        Get Started
+    </button>
+
+</section>
+
+<!-- Form Section -->
+<section class="form-section" id="registrationForm">
+
+    <div class="form-card">
+
+        <h2>User Registration</h2>
+
+        <form id="userForm">
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label>User Name</label>
+                <input
+                    type="UName"
+                    id="UserName"
+                    placeholder="Enter Your Name"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label>Mobile Number</label>
+                <input
+                    type="tel"
+                    id="mobile"
+                    placeholder="Enter mobile number"
+                    maxlength="10"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label>OTP</label>
+                <input
+                    type="text"
+                    id="otp"
+                    placeholder="Enter OTP"
+                    maxlength="6"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Submit
+            </button>
+
+            <div class="success-msg" id="message"></div>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script>
+
+function goToForm() {
+    document.getElementById('registrationForm')
+        .scrollIntoView({
+            behavior: 'smooth'
+        });
+}
+
+document.getElementById('userForm').addEventListener('submit', function(e) {
+
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const user_name = document.getElementById('UserName').value;
+    const mobile = document.getElementById('mobile').value;
+    const otp = document.getElementById('otp').value;
+
+    if(mobile.length !== 10){
+        alert("Please enter a valid 10-digit mobile number.");
+        return;
+    }
+
+    if(otp.length !== 6){
+        alert("Please enter a valid 6-digit OTP.");
+        return;
+    }
+
+    document.getElementById('message').innerHTML =
+        "Form submitted successfully!";
+
+    console.log({
+        email,
+        mobile,
+        otp
+    });
+});
+
+</script>
+
+</body>
+</html>
